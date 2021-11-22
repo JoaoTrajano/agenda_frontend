@@ -57,10 +57,6 @@ function Schedule(){
             </Header>
             <Schedules>
                 <ScheduleItem />
-                <ScheduleItem />
-                <ScheduleItem />
-                <ScheduleItem />
-              
             </Schedules>
         </Container>
     );

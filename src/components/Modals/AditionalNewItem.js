@@ -18,16 +18,12 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-export default function Modal() {
+export default function ModalAddNewItem({isOpen, closeModal}) {
     const classes = useStyles();
-    const [open, setOpen] = React.useState(false);
-  
-    const handleOpen = () => {
-      setOpen(true);
-    };
+    const [open, setOpen] = React.useState(isOpen);
   
     const handleClose = () => {
-      setOpen(false);
+      closeModal();
     };
   
     return (
@@ -36,7 +32,7 @@ export default function Modal() {
           aria-labelledby="transition-modal-title"
           aria-describedby="transition-modal-description"
           className={classes.modal}
-          open={open}
+          open={isOpen}
           onClose={handleClose}
           closeAfterTransition
           BackdropComponent={Backdrop}
@@ -44,7 +40,7 @@ export default function Modal() {
             timeout: 500,
           }}
         >
-          <Fade in={open}>
+          <Fade in={isOpen}>
             <div className={classes.paper}>
               <h2 id="transition-modal-title">Transition modal</h2>
               <p id="transition-modal-description">react-transition-group animates me.</p>
