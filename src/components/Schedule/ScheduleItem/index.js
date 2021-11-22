@@ -17,7 +17,7 @@ function ScheduleItem() {
     return (
         <Item>
             <Title>Nome da Agenda</Title>
-            <span><b>Data:</b> 20/02/2021</span>
+            <span><b>Ano:</b> 2021</span>
             <ControlButtons>
                 <Button variant="contained" color="default">
                     <AddBoxIcon /> 
