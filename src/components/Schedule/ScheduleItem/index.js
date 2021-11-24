@@ -8,7 +8,6 @@ import { Item, Title, ControlButtons } from "./style.js"
 /** 
 * Material Icons
 */
-import AddBoxIcon from '@material-ui/icons/AddBox';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
@@ -17,14 +16,14 @@ import Button from '@material-ui/core/Button';
 /**
  * Modals
  */
-import ModalAddNewItem from "../../Modals/AditionalNewItem";
-// import ViewMore from "../../Modals/ViewMore";
-// import Edite from "../../Modals/Edite";
+import ViewMore from "components/Modals/ViewMore";
+import Edite from "components/Modals/Edite";
 
 function ScheduleItem() {
     
-    const [isOpenModalNewItem, setIsOpenModalNewItem ] = useState(false);
-
+    const [isOpenModalViewMore, setIsOpenModalViewMore ] = useState(false);
+    const [isOpenModalEdited, setIsOpenModalEdited ] = useState(false);
+    
     const deleteSchedule = (id = 0) => {
         alert("Tem certeza que deseja excluir essa agenda? " + id);
         // const deleteSchedules = async () => {
@@ -44,10 +43,7 @@ function ScheduleItem() {
             <Title>Nome da Agenda</Title>
             <span><b>Ano:</b> 2021</span>
             <ControlButtons>
-                <Button variant="contained" color="default" onClick={() => setIsOpenModalNewItem(true)}>
-                    <AddBoxIcon /> 
-                </Button>
-                <Button variant="contained" color="default">
+                <Button variant="contained" color="default" onClick={() => setIsOpenModalViewMore(true)} >
                     <MoreVertIcon />
                 </Button>
             </ControlButtons>
@@ -55,11 +51,12 @@ function ScheduleItem() {
                 <Button variant="contained" color="secondary" onClick={() => deleteSchedule()}>
                     <DeleteIcon />
                 </Button>
-                <Button variant="contained" color="primary">
+                <Button variant="contained" color="primary" onClick={() => setIsOpenModalEdited(true) }>
                     <EditIcon />
                 </Button>
             </ControlButtons>
-            <ModalAddNewItem isOpen={isOpenModalNewItem} closeModal={() => setIsOpenModalNewItem(false)} />
+            <ViewMore isOpen={isOpenModalViewMore} closeModal={() => setIsOpenModalViewMore(false)} />
+            <Edite isOpen={isOpenModalEdited} closeModal={() => setIsOpenModalEdited(false)} />
         </Item>
 
     );

@@ -18,16 +18,16 @@ import TextField from '@material-ui/core/TextField';
 /**
  * Api
  */
-import api from "../../service";
+import api from "service/api";
 
 function Schedule(){
 
     const [schedules, setSchedules] = useState([]);
 
-    // const getSchedules = async () => {
-    //     const data = await api.get("");
-    //     setSchedules(data);
-    // }
+    const getSchedules = async () => {
+        const data = await api.get("https://localhost/");
+        setSchedules(data);
+    }
 
     const sendNewSchedule = (e) => {
         e.preventDefault();
