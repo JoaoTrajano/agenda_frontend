@@ -14,10 +14,10 @@ export const Item = style.div`
 `;
 
 export const Title = style.h3`
-`
+`;
 export const ControlButtons = style.div`
     display: flex;
     align-items: center;
     justify-content: space-around;
     row-gap: 32px;
-`
+`;

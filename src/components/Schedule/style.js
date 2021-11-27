@@ -1,5 +1,5 @@
 import style from "styled-components";
-import Button from '@material-ui/core/Button';
+import Button from "@material-ui/core/Button";
 
 export const Container = style.div`
     display: grid;
@@ -40,4 +40,4 @@ export const Schedules = style.div`
 export const ButtonForm = style(Button)`
     display: flex;
     row-gap: 16px;
-`
+`;
